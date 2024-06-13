@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+<h1>Welcome to the User Management System</h1>
+<p>This is the home page of your application.</p>
+<nav>
+    <ul>
+        <li><a th:href="@{/users/new/add}">Add New User</a></li>
+        <li><a th:href="@{/users/list}">View User List</a></li>
+    </ul>
+</nav>
+</body>
+</html>
