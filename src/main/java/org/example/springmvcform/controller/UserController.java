@@ -19,11 +19,12 @@ public class UserController {
         this.userService = userService;
     }
     @GetMapping("/new")
-    public String showSingUpForm(User user){
+    public String showSingUpForm(Model model){
+        model.addAttribute("user", new User());
         return "add-user";
     }
     @PostMapping("/add")
-    public String addUser(@Valid User user, BindingResult result, Model model) {
+    public String addUser(@ModelAttribute User user, BindingResult result) {
         if (result.hasErrors()) {
             return "add-user";
         }
